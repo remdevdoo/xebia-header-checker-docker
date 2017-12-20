@@ -12,7 +12,10 @@ before_install:
 
 install:
   - docker-compose build
+  - sleep 15
   - docker ps -a
+ 
+
 
 after_success:
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
