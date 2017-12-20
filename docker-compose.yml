@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile_phpfpm
+    image: xebiaheaderchecker/php-fpmsql:latest
+
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile_nginx
+    image: xebiaheaderchecker/nginx:latest
+
+  mariadb-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile_mariadb
+    image: xebiaheaderchecker/mariadb:latest
+
+  composer:
+    build:
+      context: .
+      dockerfile: Dockerfile_composer
+    image: xebiaheaderchecker/composer:latest
