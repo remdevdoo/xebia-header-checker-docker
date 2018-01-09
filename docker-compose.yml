@@ -1,10 +1,10 @@
 version: '3.1'
 services:
-  php:
-    build:
-      context: .
-      dockerfile: Dockerfile_phpfpm
-    image: xebiaheaderchecker/php-fpmsql:latest
+ # php:
+ #   build:
+ #     context: .
+ #     dockerfile: Dockerfile_phpfpm
+ #   image: xebiaheaderchecker/php-fpmsql:latest
 
   nginx:
     build:

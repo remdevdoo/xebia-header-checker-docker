@@ -1,10 +1,9 @@
-sudo required
+sudo: required
 
 language: generic
 
 services:
   - docker
-
 
 before_install:
   - docker --version
@@ -12,12 +11,8 @@ before_install:
 
 install:
   - docker-compose build
-  - sleep 15
   - docker ps -a
- 
-
 
 after_success:
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - docker-compose push
-
