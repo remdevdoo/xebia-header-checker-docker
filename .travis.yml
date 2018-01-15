@@ -8,10 +8,10 @@ services:
 before_install:
   - docker --version
   - docker-compose --version
+  - export DOCKER_CONTENT_TRUST=1
 
 install:
   - docker-compose build
-  - docker ps -a
 
 after_success:
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
